@@ -1,4 +1,3 @@
-const { validateHeaderName, validateHeaderValue } = require("http");
 const getInput = require("../../lib/getInput");
 
 const input = getInput.getInput(__dirname);
