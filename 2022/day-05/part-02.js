@@ -1,4 +1,3 @@
-
 const getInput = require("../../lib/getInput");
 
 const input = getInput.getInput(__dirname);
