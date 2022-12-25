@@ -26,20 +26,18 @@ function solve() {
     let vis = Array.from(grid, i => new Array(i.length).fill(0));
 
     for (let i = 0; i < 4; ++i) {
-        grid.forEach(
-            (v, i) => scan(v).forEach(
-                (w, j) => vis[i][j] = w || vis[i][j]
+        grid.forEach((v, i) =>
+            scan(v).forEach((w, j) =>
+                vis[i][j] = w || vis[i][j]
             )
         );
         grid = rotateRight.rotateRight(grid);
         vis = rotateRight.rotateRight(vis);
     }
-    // vis.forEach(r => console.log(r));
 
     return vis.reduce(
         (pRow, cRow) => cRow.reduce(
-            (p, c) => p + c,
-            0
+            (p, c) => p + c, 0
         ) + pRow, 0
     );
 }
